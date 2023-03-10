@@ -1,0 +1,44 @@
+.posts-title {
+  padding-left: 30px;
+}
+
+.page-wrapper {
+  padding: 30px;
+  display: flex;
+  column-gap: 60px;
+
+  .posts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    width: 65%;
+
+    .post-item {
+      width: 400px;
+
+      .post-body {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+  .comments-wrapper {
+    width: calc(35% - 60px);
+  }
+}
+
+
+
+
+
+
+
+
+
+.arrow-icon {
+  width: 10px;
+}
