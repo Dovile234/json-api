@@ -4,10 +4,10 @@ import "./Navigation.scss";
 
 const Navigation = () => {
   return (
-    <div className="container">
+    <div className="header-container">
       <ul className="main-navigation">
         <li>
-          <NavLink to="/json-api">HOME</NavLink>
+          <NavLink to="/">HOME</NavLink>
         </li>
         <li>
           <NavLink to="/json-api/posts">Posts</NavLink>

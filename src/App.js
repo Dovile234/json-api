@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/json-api" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/json-api/posts/:post" element={<Posts />} />
         <Route path="/json-api/posts" element={<Posts />} />
         <Route
