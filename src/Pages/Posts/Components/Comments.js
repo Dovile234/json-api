@@ -10,7 +10,6 @@ const Comments = () => {
   const [body, setBody] = useState("");
   const [email, setEmail] = useState("");
   const [isPosted, setIsPosted] = useState(false);
-  const [alert, setAlert] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:3000/posts/${post}/comments`)
@@ -23,7 +22,6 @@ const Comments = () => {
 
   const newCommentHandler = (event) => {
     event.preventDefault();
-    setAlert("alert");
     if (!name || !email || !body) {
       return;
     }
@@ -45,7 +43,6 @@ const Comments = () => {
         setIsPosted(true);
         console.log(json);
       });
-    setAlert("");
     setName("");
     setBody("");
     setEmail("");
@@ -93,28 +90,34 @@ const Comments = () => {
       {post && post.length > 0 && (
         <form onSubmit={newCommentHandler}>
           <div>
-            <input
-              className={!name ? `input ${alert}` : "input"}
-              type="text"
-              value={name}
-              onChange={nameHandler}
-              placeholder="Enter your name"
-            />
-            <input
-              className={!email ? `input ${alert}` : "input"}
-              type="email"
-              value={email}
-              onChange={emailHandler}
-              placeholder="Enter your email"
-            />
+            <div className="input-box">
+              <input
+                className="input"
+                type="text"
+                value={name}
+                onChange={nameHandler}
+                required="required"
+              />
+              <span>Full Name</span>
+            </div>
+            <div className="input-box">
+              <input
+                className="input"
+                type="email"
+                value={email}
+                onChange={emailHandler}
+                required="required"
+              />
+              <span>Email</span>
+            </div>
           </div>
           <div className="textarea-wrapper">
             <textarea
-              className={!body ? alert : ""}
               value={body}
               onChange={bodyHandler}
               placeholder="Add a comment..."
               cols="50"
+              required="required"
             />
             <button type="submit" className="arrow-icon-wrapper">
               <img className="arrow-icon" src={arrow} alt={"arrow"} />

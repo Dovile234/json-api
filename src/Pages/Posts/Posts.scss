@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(29,29,29);
+  background-color: rgb(29, 29, 29);
   color: rgb(110, 101, 99);
 }
 .posts-title {
@@ -12,19 +12,19 @@ body {
   column-gap: 60px;
 
   .posts-container {
-width: 65%;
+    width: 65%;
 
     .posts-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       row-gap: 30px;
-  
-      a {  
+
+      a {
         color: white;
         text-decoration: none;
         width: 48%;
-        background-color: rgb(37,37,37);
+        background-color: rgb(37, 37, 37);
         margin-bottom: 20px;
         padding: 20px;
         text-transform: capitalize;
@@ -34,22 +34,21 @@ width: 65%;
           background-color: grey;
         }
       }
-  
+
       .post-item {
         display: flex;
         column-gap: 15px;
-  
-        
+
         img {
           border-radius: 50%;
           width: 40px;
           height: 40px;
         }
-  
+
         .post-title {
           margin: 0;
         }
-  
+
         // .post-body {
         //   overflow: hidden;
         //   text-overflow: ellipsis;
@@ -59,34 +58,32 @@ width: 65%;
         //   -webkit-box-orient: vertical;
         // }
       }
-  }
-
-  
+    }
   }
   .comments-container {
-width: calc(35% - 60px);
+    width: calc(35% - 60px);
 
     .comments-title {
-  font-size: 28px;
-   }
+      font-size: 28px;
+    }
 
     .comment-wrapper {
-   margin: 25px 0 25px;
+      margin: 25px 0 25px;
     }
-    
+
     .comment-item {
       display: flex;
       column-gap: 15px;
       width: 100%;
       background-color: grey;
       margin-bottom: 20px;
-      padding: 10px;
+      padding: 10px 10px 20px;
       border-radius: 10px;
       color: white;
 
       .profile-picture-wrapper {
         padding-top: 5px;
-        
+
         .profile-picture {
           border-radius: 50%;
           width: 70px;
@@ -99,34 +96,59 @@ width: calc(35% - 60px);
         text-transform: capitalize;
       }
       .persons-email {
-       font-size: 14px;
-       color: rgb(211, 209, 209);
-       font-weight: 500;
-       }
+        font-size: 14px;
+        color: rgb(211, 209, 209);
+        font-weight: 500;
+      }
 
-       .display-text-group {
+      .display-text-group {
         margin-top: 20px;
         font-size: 16px;
-    }
+      }
     }
 
     .no-comments {
       font-weight: 600;
     }
-    
-    
-
-   
   }
-  input {
-    width: 100%;
-    padding: 5px;
-    border: solid rgb(175, 174, 174) 2px;
-    border-radius: 5px;
-    margin-bottom: 10px;
 
-    &.alert {
-      border-color: red;
+  .input-box {
+    position: relative;
+    width: 100%;
+
+    .input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid orange;
+      background-color: transparent;
+      border-radius: 5px;
+      outline: none;
+      font-size: 18px;
+      color: grey;
+      margin-bottom: 10px;
+
+      &:valid ~ span,
+      &:focus ~ span {
+        color: orange;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 14px;
+        padding: 0 10px;
+        background-color: rgb(29, 29, 29);
+        border-left: 1px solid orange;
+        border-right: 1px solid orange;
+        letter-spacing: 1px;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      pointer-events: none;
+      font-size: 18px;
+      color: grey;
+      text-transform: uppercase;
+      transition: 0.5s;
     }
   }
 
@@ -134,32 +156,35 @@ width: calc(35% - 60px);
     position: relative;
 
     textarea {
-      border: solid rgb(175, 174, 174) 2px;
+      border: 2px solid orange;
+      background-color: transparent;
       resize: none;
       border-radius: 5px;
       width: 100%;
-      padding: 5px;
+      padding: 10px 35px 10px 10px;
+      outline: none;
+      font-size: 18px;
+      color: gray;
 
-      &.alert {
-        border-color: red;}
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
-  
+
     .arrow-icon-wrapper {
       position: absolute;
       right: 15px;
-      bottom: 13px;
+      bottom: 25px;
       border: none;
       background-color: transparent;
       cursor: pointer;
 
-      // .arrow-icon
+      .arrow-icon {
+        width: 10px;
+      }
     }
   }
-
- 
 }
-
-
 
 .show-more {
   color: rgb(253, 205, 116);
@@ -170,10 +195,3 @@ width: calc(35% - 60px);
 .selected-post {
   background-color: rgb(182, 180, 180);
 }
-
-
-
-.arrow-icon {
-  width: 10px;
-}
-

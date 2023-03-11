@@ -7,7 +7,7 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/posts?_limit=11")
+    fetch("http://localhost:3000/posts?")
       .then((res) => res.json())
       .then((postsData) => {
         setPosts(postsData);
@@ -16,7 +16,7 @@ const Posts = () => {
 
   return (
     <div className="container">
-      <h1 className="posts-title">Recent posts</h1>
+      <h1 className="posts-title">All posts</h1>
       <div className="page-wrapper">
         <div className="posts-container">
           <div className="posts-wrapper">
