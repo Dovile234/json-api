@@ -7,11 +7,10 @@ const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://jsonplaceholder.typicode.com/posts?_start=8&_end=16&_expand=user"
-    )
+    fetch("http://localhost:3000/posts?_start=8&_end=16&_expand=user")
       .then((res) => res.json())
       .then((postsData) => {
+        console.log(postsData);
         setPosts(postsData);
       });
   }, []);
@@ -44,7 +43,7 @@ const LatestPosts = () => {
                 <Link to={`/json-api/posts/${post.id}`}>
                   <span>Comments</span>
 
-                  <img src={comment} />
+                  <img src={comment} alt="comment" />
                 </Link>
               </div>
             </div>

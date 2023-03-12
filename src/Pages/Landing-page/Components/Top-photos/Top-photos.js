@@ -18,7 +18,7 @@ const TopPhotos = () => {
           {photos.map((photo, index) => (
             <div className="photo-container" key={index}>
               <div className="photo-wrapper">
-                <img src={`https://picsum.photos/350/200`} />
+                <img src={`https://picsum.photos/350/200`} alt="random" />
               </div>
               <h4>{photo.title}</h4>
             </div>
