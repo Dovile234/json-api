@@ -1,7 +1,10 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
+import Albums from "./Pages/Albums-page/Albums";
 import LandingPage from "./Pages/Landing-page/Landing-page";
+import PageNotFound from "./Pages/Page-not-found/Page-not-found";
 import Posts from "./Pages/Posts/Posts-page";
+import User from "./Pages/User-page/User";
 
 function App() {
   return (
@@ -11,15 +14,11 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/json-api/posts/:post" element={<Posts />} />
         <Route path="/json-api/posts" element={<Posts />} />
-        <Route
-          path="*"
-          element={
-            <div>
-              <h1>404 error. Page not found</h1>
-              <Link to="/json-api">Back to Home page</Link>
-            </div>
-          }
-        />
+        <Route path="/json-api/albums" element={<Albums />} />
+        <Route path="/json-api/albums/:photos" element={<Albums />} />
+        <Route path="/json-api/user/:id" element={<User />} />
+        {/* <Route path="/json-api/albums/:photos" element={<Albums />} /> */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

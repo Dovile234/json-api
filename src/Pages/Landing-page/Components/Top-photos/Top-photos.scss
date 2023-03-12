@@ -1,0 +1,18 @@
+.photo-container {
+  padding: 20px;
+
+  .photo-wrapper {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: rgb(143, 129, 103);
+    font-size: 14px;
+    text-align: center;
+  }
+}
