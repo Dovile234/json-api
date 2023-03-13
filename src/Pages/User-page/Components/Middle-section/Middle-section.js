@@ -18,7 +18,7 @@ const MiddleSection = ({ onId }) => {
       .then((userData) => {
         setUser(userData);
       });
-  }, []);
+  }, [onId]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/user/${onId}/posts`)

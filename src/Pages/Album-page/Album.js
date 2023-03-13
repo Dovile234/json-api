@@ -16,7 +16,7 @@ const Album = () => {
       .then((photos) => {
         setPhotos(photos);
       });
-  }, []);
+  }, [id]);
 
   const getImg = (imgSrc) => {
     setTempImg(imgSrc);

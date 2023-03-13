@@ -12,7 +12,7 @@ const Albums = ({ onId }) => {
       .then((albumsData) => {
         setAlbums(albumsData);
       });
-  }, []);
+  }, [inId]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/albums/1/photos`)
@@ -38,7 +38,7 @@ const Albums = ({ onId }) => {
                 {photos && photos.length > 0 ? (
                   <div className="photos-wrapper">
                     {photos.map((photo, index) => (
-                      <img key={index} src={photo.thumbnailUrl} />
+                      <img key={index} src={photo.thumbnailUrl} alt="random" />
                     ))}
                   </div>
                 ) : (

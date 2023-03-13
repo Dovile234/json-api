@@ -19,7 +19,7 @@ const Navigation = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
           <button type="submit">
-            <img className="search-icon" src={searchIcon} />
+            <img className="search-icon" src={searchIcon} alt="search" />
           </button>
         </form>
         <ul className="main-navigation">
