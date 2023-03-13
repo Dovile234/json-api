@@ -29,11 +29,15 @@ const Albums = ({ onId }) => {
           {albums.map((album, index) => (
             <div className="album-item" key={index}>
               <h3>{album.title}</h3>
-              <div className="photos-wrapper">
-                {photos.map((photo, index) => (
-                  <img key={index} src={photo.thumbnailUrl} />
-                ))}
-              </div>
+              {photos && photos.length > 0 ? (
+                <div className="photos-wrapper">
+                  {photos.map((photo, index) => (
+                    <img key={index} src={photo.thumbnailUrl} />
+                  ))}
+                </div>
+              ) : (
+                <p>No photos</p>
+              )}
             </div>
           ))}
         </div>

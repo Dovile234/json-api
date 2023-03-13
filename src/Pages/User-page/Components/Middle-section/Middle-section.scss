@@ -14,8 +14,12 @@
     color: grey;
     margin-bottom: 10px;
     resize: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
-  button {
+  .post-button {
     cursor: pointer;
     border: none;
     display: flex;
@@ -42,14 +46,48 @@
     background-size: 200% auto;
     box-shadow: 0 0 20px #383838;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
     &:hover {
       background-position: right center;
       color: #fff;
       text-decoration: none;
+    }
+  }
+
+  .post-items {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .post-top {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid grey;
+
+      .profile-image-wrapper {
+        max-width: 25%;
+      }
+
+      .name-box {
+        max-width: 60%;
+        border: none;
+        margin-left: 20px;
+      }
+
+      .buttons-wrapper {
+        max-width: 50px;
+        margin-left: auto;
+        border-left: 1px solid orange;
+        height: 50%;
+
+        .delete-button,
+        .edit-button {
+          display: flex;
+          justify-content: flex-start;
+          background: none;
+          border: none;
+          color: orange;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

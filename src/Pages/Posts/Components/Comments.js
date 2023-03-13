@@ -9,44 +9,85 @@ const Comments = () => {
   const [name, setName] = useState("");
   const [body, setBody] = useState("");
   const [email, setEmail] = useState("");
-  const [isPosted, setIsPosted] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+  const [editId, setEditId] = useState(0);
+
+  const deleteHandler = (id) => {
+    fetch(`http://localhost:3000/comments/${id}`, {
+      method: "DELETE",
+    });
+    setIsValid(true);
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3000/posts/${post}/comments`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setComments(data);
-        setIsPosted(false);
+        setIsValid(false);
       });
-  }, [post, isPosted]);
+  }, [post, isValid]);
 
-  const newCommentHandler = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
-    if (!name || !email || !body) {
-      return;
-    }
 
-    fetch("http://localhost:3000/comments", {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        email,
-        body,
-        postId: Number(post),
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        setIsPosted(true);
-        console.log(json);
+    if (editId) {
+      fetch(`http://localhost:3000/comments/${editId}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          name,
+          body,
+          email,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          setIsValid(true);
+          console.log(json);
+        });
+      setName("");
+      setBody("");
+      setEmail("");
+    } else {
+      if (!name || !email || !body) {
+        return;
+      }
+
+      fetch("http://localhost:3000/comments", {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          email,
+          body,
+          postId: Number(post),
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          setIsValid(true);
+          console.log(json);
+        });
+      setName("");
+      setBody("");
+      setEmail("");
+    }
+  };
+
+  const editHandler = (id) => {
+    fetch(`http://localhost:3000/comments/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBody(data.body);
+        setName(data.name);
+        setEmail(data.email);
+        setEditId(id);
       });
-    setName("");
-    setBody("");
-    setEmail("");
   };
 
   const nameHandler = (event) => setName(event.target.value);
@@ -79,6 +120,18 @@ const Comments = () => {
                     max={100}
                     readMoreText={<span className="show-more">-Show more</span>}
                   />
+                  <button
+                    className="edit-button"
+                    onClick={() => editHandler(comment.id)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="delete-button"
+                    onClick={() => deleteHandler(comment.id)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             ))}
@@ -89,7 +142,7 @@ const Comments = () => {
       </div>
 
       {post && post.length > 0 && (
-        <form onSubmit={newCommentHandler}>
+        <form onSubmit={submitHandler}>
           <div>
             <div className="input-box">
               <input

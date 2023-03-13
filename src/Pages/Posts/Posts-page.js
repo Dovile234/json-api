@@ -19,22 +19,26 @@ const Posts = () => {
       <h1 className="posts-title">All posts</h1>
       <div className="page-wrapper">
         <div className="posts-container">
-          <div className="posts-wrapper">
-            {posts.map((post, index) => (
-              <NavLink key={index} to={"/json-api/posts/" + post.id}>
-                <div className="inner-post-item">
-                  <img
-                    src="https://xsgames.co/randomusers/avatar.php?g=male"
-                    alt="profile"
-                  />
-                  <div>
-                    <h3 className="post-title">{post.title}</h3>
-                    <p className="post-body">{post.body}</p>
+          {posts && posts.length > 0 ? (
+            <div className="posts-wrapper">
+              {posts.map((post, index) => (
+                <NavLink key={index} to={"/json-api/posts/" + post.id}>
+                  <div className="inner-post-item">
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=male"
+                      alt="profile"
+                    />
+                    <div>
+                      <h3 className="post-title">{post.title}</h3>
+                      <p className="post-body">{post.body}</p>
+                    </div>
                   </div>
-                </div>
-              </NavLink>
-            ))}
-          </div>
+                </NavLink>
+              ))}
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
         <Comments />
       </div>

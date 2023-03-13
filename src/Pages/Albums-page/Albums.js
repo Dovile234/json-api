@@ -7,20 +7,25 @@ const Albums = () => {
   const [photos, setPhotos] = useState("");
 
   useEffect(() => {
+    getAlbums();
+    getPhotos();
+  }, []);
+
+  const getAlbums = () => {
     fetch("http://localhost:3000/albums?_limit=15")
       .then((res) => res.json())
       .then((albumsData) => {
         setAlbums(albumsData);
       });
-  }, []);
+  };
 
-  useEffect(() => {
+  const getPhotos = () => {
     fetch(`http://localhost:3000/albums/1/photos`)
       .then((res) => res.json())
       .then((data) => {
         setPhotos(data);
       });
-  }, []);
+  };
 
   return (
     <div className="albums-container">
@@ -34,11 +39,15 @@ const Albums = () => {
                 key={index}
               >
                 <h3>{album.title}</h3>
-                <div className="photos-wrapper">
-                  {photos.map((photo, index) => (
-                    <img key={index} src={photo.thumbnailUrl} />
-                  ))}
-                </div>
+                {photos && photos.length > 0 ? (
+                  <div className="photos-wrapper">
+                    {photos.map((photo, index) => (
+                      <img key={index} src={photo.thumbnailUrl} />
+                    ))}
+                  </div>
+                ) : (
+                  <p>No photos</p>
+                )}
               </Link>
             ))}
           </div>
