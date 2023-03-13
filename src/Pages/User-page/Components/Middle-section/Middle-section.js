@@ -135,6 +135,7 @@ const MiddleSection = ({ onId }) => {
                   </div>
                   <div className="name-box">
                     <h4>{user.name}</h4>
+
                     <span>{user.email}</span>
                   </div>
                   <div className="buttons-wrapper">
@@ -157,7 +158,10 @@ const MiddleSection = ({ onId }) => {
                   <h3>{post.title}</h3>
                   <p>{post.body}</p>
                 </div>
-                <Link to={`/json-api/posts/${post.id}`}>
+                <Link
+                  className="comments-button"
+                  to={`/json-api/posts/${post.id}`}
+                >
                   <span>Comments</span>
 
                   <img src={comment} alt="comment" />

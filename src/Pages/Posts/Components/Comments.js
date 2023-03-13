@@ -111,7 +111,23 @@ const Comments = () => {
                 </div>
 
                 <div className="comment-content-wrapper">
-                  <h3 className="persons-name">{comment.name}</h3>
+                  <div className="title-wrapper">
+                    <h3 className="persons-name">{comment.name}</h3>
+                    <div className="buttons-wrapper">
+                      <button
+                        className="edit-button"
+                        onClick={() => editHandler(comment.id)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="delete-button"
+                        onClick={() => deleteHandler(comment.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
                   <span className="persons-email">{comment.email}</span>
                   <ReadMoreReact
                     text={comment.body}
@@ -120,18 +136,6 @@ const Comments = () => {
                     max={100}
                     readMoreText={<span className="show-more">-Show more</span>}
                   />
-                  <button
-                    className="edit-button"
-                    onClick={() => editHandler(comment.id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="delete-button"
-                    onClick={() => deleteHandler(comment.id)}
-                  >
-                    Delete
-                  </button>
                 </div>
               </div>
             ))}

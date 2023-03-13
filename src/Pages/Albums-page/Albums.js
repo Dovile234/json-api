@@ -29,6 +29,7 @@ const Albums = () => {
 
   return (
     <div className="albums-container">
+      <h1 className="albums-page-title">All albums</h1>
       <div className="albums-wrapper">
         {albums && albums.length > 0 ? (
           <div className="album-wrapper">

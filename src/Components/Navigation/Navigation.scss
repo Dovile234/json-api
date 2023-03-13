@@ -5,7 +5,7 @@
   .header-wrapper {
     display: flex;
     max-width: 1440px;
-    padding: 10px 0;
+    padding: 10px 30px;
     margin: 0 auto;
     align-items: center;
 
@@ -20,11 +20,42 @@
       }
     }
 
+    form {
+      position: relative;
+      margin-left: auto;
+      margin-right: 10px;
+      .search-input {
+        border-radius: 20px;
+        border: 2px solid orange;
+        background-color: transparent;
+        padding: 9px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        outline: none;
+        font-weight: 600;
+      }
+      button {
+        position: absolute;
+        right: 18px;
+        top: 6px;
+        background-color: rgba(255, 166, 0, 0.151);
+        border-radius: 50%;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+        .search-icon {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
     .main-navigation {
       display: flex;
       font-size: 20px;
       color: rgb(212, 212, 212);
-      margin-left: auto;
+      padding: 0;
 
       li {
         list-style-type: none;

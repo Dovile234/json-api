@@ -88,10 +88,36 @@
         }
       }
 
-      .persons-name {
-        margin: 5px 0 2px;
-        text-transform: capitalize;
+      .title-wrapper {
+        display: flex;
+
+        .persons-name {
+          margin: 5px 0 2px;
+          width: 70%;
+          text-transform: capitalize;
+        }
+        .buttons-wrapper {
+          max-width: 50px;
+          margin-left: auto;
+          margin-top: 10px;
+          margin-right: 5px;
+          border-left: 1px solid orange;
+          height: 50%;
+        }
+
+        .delete-button,
+        .edit-button {
+          display: flex;
+          justify-content: flex-start;
+          background: none;
+          border: none;
+          color: orange;
+          cursor: pointer;
+          font-size: 16px;
+          padding-bottom: 5px;
+        }
       }
+
       .persons-email {
         font-size: 14px;
         color: rgb(211, 209, 209);
@@ -184,7 +210,7 @@
 }
 
 .show-more {
-  color: rgb(253, 205, 116);
+  color: rgb(20, 20, 20);
   text-decoration: underline;
   cursor: pointer;
 }

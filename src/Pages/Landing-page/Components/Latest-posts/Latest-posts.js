@@ -31,7 +31,9 @@ const LatestPosts = () => {
                   />
                 </div>
                 <div className="name-box">
-                  <h4>{post.user.name}</h4>
+                  <Link to={`/json-api/user/${post.userId}`}>
+                    <h4>{post.user.name}</h4>
+                  </Link>
                   <span>{post.user.email}</span>
                 </div>
                 <p>{post.user.company.bs}</p>
@@ -40,7 +42,10 @@ const LatestPosts = () => {
                   <h3>{post.title}</h3>
                   <p>{post.body}</p>
                 </div>
-                <Link to={`/json-api/posts/${post.id}`}>
+                <Link
+                  className="comments-button"
+                  to={`/json-api/posts/${post.id}`}
+                >
                   <span>Comments</span>
 
                   <img src={comment} alt="comment" />
