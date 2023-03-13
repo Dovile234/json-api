@@ -15,6 +15,7 @@ const Comments = () => {
     fetch(`http://localhost:3000/posts/${post}/comments`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setComments(data);
         setIsPosted(false);
       });

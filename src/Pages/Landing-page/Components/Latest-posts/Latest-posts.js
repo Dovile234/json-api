@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./Latest-posts.scss";
+import "../../../../Components/Post-item.scss";
+import { Link } from "react-router-dom";
 import comment from "../../../../Images/comment.png";
 
 const LatestPosts = () => {
@@ -10,7 +11,6 @@ const LatestPosts = () => {
     fetch("http://localhost:3000/posts?_start=8&_end=16&_expand=user")
       .then((res) => res.json())
       .then((postsData) => {
-        console.log(postsData);
         setPosts(postsData);
       });
   }, []);

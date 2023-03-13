@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
+import Album from "./Pages/Album-page/Album";
 import Albums from "./Pages/Albums-page/Albums";
 import LandingPage from "./Pages/Landing-page/Landing-page";
 import PageNotFound from "./Pages/Page-not-found/Page-not-found";
@@ -15,7 +16,8 @@ function App() {
         <Route path="/json-api/posts/:post" element={<Posts />} />
         <Route path="/json-api/posts" element={<Posts />} />
         <Route path="/json-api/albums" element={<Albums />} />
-        <Route path="/json-api/albums/:photos" element={<Albums />} />
+        <Route path="/json-api/albums/" element={<Albums />} />
+        <Route path="/json-api/album/:id" element={<Album />} />
         <Route path="/json-api/user/:id" element={<User />} />
         {/* <Route path="/json-api/albums/:photos" element={<Albums />} /> */}
         <Route path="*" element={<PageNotFound />} />

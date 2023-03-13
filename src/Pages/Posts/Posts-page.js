@@ -7,7 +7,7 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/posts?")
+    fetch("http://localhost:3000/posts")
       .then((res) => res.json())
       .then((postsData) => {
         setPosts(postsData);
@@ -22,7 +22,7 @@ const Posts = () => {
           <div className="posts-wrapper">
             {posts.map((post, index) => (
               <NavLink key={index} to={"/json-api/posts/" + post.id}>
-                <div className="post-item">
+                <div className="inner-post-item">
                   <img
                     src="https://xsgames.co/randomusers/avatar.php?g=male"
                     alt="profile"
