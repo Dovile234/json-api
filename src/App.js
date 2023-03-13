@@ -18,7 +18,6 @@ function App() {
         <Route path="/json-api/posts/:post" element={<Posts />} />
         <Route path="/json-api/posts" element={<Posts />} />
         <Route path="/json-api/albums" element={<Albums />} />
-        {/* <Route path="/json-api/albums/" element={<Albums />} /> */}
         <Route path="/json-api/album/:id" element={<Album />} />
         <Route path="/json-api/user/:id" element={<User />} />
         <Route path="*" element={<PageNotFound />} />
