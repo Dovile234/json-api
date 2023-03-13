@@ -12,7 +12,7 @@ const Albums = ({ onId }) => {
       .then((albumsData) => {
         setAlbums(albumsData);
       });
-  }, [inId]);
+  }, [onId]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/albums/1/photos`)
