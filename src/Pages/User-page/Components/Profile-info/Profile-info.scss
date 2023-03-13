@@ -1,0 +1,50 @@
+.followers-wrapper {
+  position: relative;
+  padding-top: 70px;
+
+  .profile-img {
+    border-radius: 50%;
+    border: 3px solid white;
+    position: absolute;
+    width: 130px;
+    top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .follower-info {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      width: 45%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .other-info {
+    a {
+      text-decoration: none;
+      color: grey;
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid grey;
+
+      .icon {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

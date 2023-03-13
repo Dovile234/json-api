@@ -1,0 +1,22 @@
+.user-bg-wrapper {
+  background-image: url("../../Images/user-bg.jpg");
+  height: 350px;
+  background-position: 50% 30%;
+}
+
+.user-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .user-info {
+    width: 13%;
+  }
+
+  .middle-section {
+    width: 40%;
+  }
+
+  .right-section {
+    width: 26%;
+  }
+}

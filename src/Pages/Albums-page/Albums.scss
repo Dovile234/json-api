@@ -1,0 +1,42 @@
+.albums-page-title {
+  margin: 20px auto;
+  max-width: fit-content;
+}
+
+.albums-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px;
+  .album-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .album-item {
+      border: 2px solid grey;
+      width: calc(25% - 15px);
+      border-radius: 10px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: rgb(180, 178, 178);
+
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .photos-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        img {
+          width: calc(50% - 15px);
+        }
+      }
+    }
+  }
+}
