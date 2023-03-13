@@ -1,0 +1,27 @@
+.search-title {
+  padding-left: 30px;
+}
+
+.results-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  color: rgb(206, 204, 204);
+  padding: 30px;
+}
+.results-wrapper a {
+  text-decoration: none;
+  color: rgb(206, 204, 204);
+  text-transform: capitalize;
+}
+@media (max-width: 1300px) {
+  .results-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .results-wrapper {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=Search-page.css.map */

@@ -1,0 +1,80 @@
+.post-item {
+  padding: 30px 0;
+  border-bottom: 2px solid rgb(66, 66, 66);
+}
+
+.post-item-container {
+  color: rgb(228, 226, 226);
+  text-transform: capitalize;
+  background-color: rgb(83, 83, 83);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+}
+.post-item-container p {
+  width: 100%;
+}
+.post-item-container .profile-image-wrapper {
+  width: 10%;
+}
+.post-item-container .profile-image-wrapper .profile-image {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+.post-item-container .name-box {
+  width: 90%;
+  padding-left: 15px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 15px;
+}
+.post-item-container .name-box a {
+  text-decoration: none;
+}
+.post-item-container .name-box h4 {
+  margin: 0;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+}
+.post-item-container .name-box span {
+  font-size: 14px;
+}
+.post-item-container .info-body {
+  width: 100%;
+}
+.post-item-container .comments-button {
+  max-width: 200px;
+  margin-left: auto;
+  margin-top: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  background-color: orange;
+  border-radius: 20px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 4px;
+  background-image: linear-gradient(to right, #f46b45 0%, #eea849 51%, #f46b45 100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #383838;
+}
+.post-item-container .comments-button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.post-item-container .comments-button span {
+  padding: 6px;
+  border-right: 1px solid white;
+}
+.post-item-container .comments-button img {
+  margin: 0 10px;
+  width: 20px;
+  height: 20px;
+}/*# sourceMappingURL=Post-item.css.map */

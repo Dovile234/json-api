@@ -1,0 +1,19 @@
+.user-bg-wrapper {
+  background-image: url("../../Images/user-bg.jpg");
+  height: 350px;
+  background-position: 50% 30%;
+}
+
+.user-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.user-wrapper .user-info {
+  width: 13%;
+}
+.user-wrapper .middle-section {
+  width: 40%;
+}
+.user-wrapper .right-section {
+  width: 26%;
+}/*# sourceMappingURL=User.css.map */
