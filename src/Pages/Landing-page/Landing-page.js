@@ -17,8 +17,10 @@ const LandingPage = () => {
           <LatestPosts />
         </div>
         <div className="right-section">
-          <h2>Todays Highlights </h2>
-          <Link to="/json-api/albums">More</Link>
+          <div className="highlights-title-wrapper">
+            <h2>Todays Highlights </h2>
+            <Link to="/json-api/albums">More</Link>
+          </div>
           <TopPhotos />
         </div>
       </div>

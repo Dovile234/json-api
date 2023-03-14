@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Albums.scss";
+import Photos from "./Photos/Photos";
 
 const Albums = () => {
   const [albums, setAlbums] = useState([]);
@@ -41,11 +42,7 @@ const Albums = () => {
               >
                 <h3>{album.title}</h3>
                 {photos && photos.length > 0 ? (
-                  <div className="photos-wrapper">
-                    {photos.map((photo, index) => (
-                      <img key={index} src={photo.thumbnailUrl} />
-                    ))}
-                  </div>
+                  <Photos onData={photos} />
                 ) : (
                   <p>No photos</p>
                 )}
@@ -55,7 +52,6 @@ const Albums = () => {
         ) : (
           <span>No albums</span>
         )}
-        ;
       </div>
     </div>
   );

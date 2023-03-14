@@ -7,16 +7,29 @@
 .user-wrapper {
   display: flex;
   justify-content: space-between;
+  padding: 30px;
 
   .user-info {
-    width: 13%;
+    max-width: 18%;
+
+    @media (max-width: 860px) {
+      max-width: 35%;
+    }
   }
 
   .middle-section {
-    width: 40%;
+    max-width: 40%;
+
+    @media (max-width: 860px) {
+      max-width: 60%;
+    }
   }
 
   .right-section {
-    width: 26%;
+    width: 30%;
+
+    @media (max-width: 860px) {
+      display: none;
+    }
   }
 }

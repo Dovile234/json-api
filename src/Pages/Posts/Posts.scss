@@ -6,10 +6,14 @@
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 60px;
+  justify-content: space-between;
 
   .posts-container {
     max-width: 65%;
+
+    @media (max-width: 1150px) {
+      max-width: 55%;
+    }
 
     .posts-wrapper {
       display: flex;
@@ -20,7 +24,7 @@
       a {
         color: white;
         text-decoration: none;
-        width: 48%;
+        max-width: 48%;
         background-color: rgb(37, 37, 37);
         margin-bottom: 20px;
         padding: 20px;
@@ -29,6 +33,10 @@
 
         &.active {
           background-color: grey;
+        }
+
+        @media (max-width: 1170px) {
+          max-width: 100%;
         }
       }
 
@@ -48,166 +56,6 @@
       }
     }
   }
-  .comments-container {
-    max-width: calc(35% - 60px);
-
-    .comments-title {
-      font-size: 28px;
-    }
-
-    .comment-wrapper {
-      margin: 25px 0 25px;
-    }
-
-    .comment-item {
-      display: flex;
-      column-gap: 15px;
-      width: 100%;
-      background-color: grey;
-      margin-bottom: 20px;
-      padding: 10px 10px 20px;
-      border-radius: 10px;
-      color: white;
-
-      .profile-picture-wrapper {
-        padding-top: 5px;
-
-        .profile-picture {
-          border-radius: 50%;
-          width: 70px;
-          height: 70px;
-        }
-      }
-
-      .comment-content-wrapper {
-        width: 100%;
-
-        .title-wrapper {
-          display: flex;
-
-          .persons-name {
-            margin: 5px 0 2px;
-            width: 70%;
-            text-transform: capitalize;
-          }
-          .buttons-wrapper {
-            max-width: 50px;
-            margin-left: auto;
-            margin-top: 10px;
-            margin-right: 5px;
-            border-left: 1px solid orange;
-            height: 50%;
-          }
-
-          .delete-button,
-          .edit-button {
-            display: flex;
-            justify-content: flex-start;
-            background: none;
-            border: none;
-            color: orange;
-            cursor: pointer;
-            font-size: 16px;
-            padding-bottom: 5px;
-          }
-        }
-      }
-
-      .persons-email {
-        font-size: 14px;
-        color: rgb(211, 209, 209);
-        font-weight: 500;
-      }
-
-      .display-text-group {
-        margin-top: 20px;
-        font-size: 16px;
-      }
-    }
-
-    .no-comments {
-      font-weight: 600;
-    }
-  }
-
-  .input-box {
-    position: relative;
-    width: 100%;
-
-    .input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid orange;
-      background-color: transparent;
-      border-radius: 5px;
-      outline: none;
-      font-size: 18px;
-      color: grey;
-      margin-bottom: 10px;
-
-      &:valid ~ span,
-      &:focus ~ span {
-        color: orange;
-        transform: translateX(10px) translateY(-7px);
-        font-size: 14px;
-        padding: 0 10px;
-        background-color: rgb(29, 29, 29);
-        border-left: 1px solid orange;
-        border-right: 1px solid orange;
-        letter-spacing: 1px;
-      }
-    }
-
-    span {
-      position: absolute;
-      left: 0;
-      padding: 10px;
-      pointer-events: none;
-      font-size: 18px;
-      color: grey;
-      text-transform: uppercase;
-      transition: 0.5s;
-    }
-  }
-
-  .textarea-wrapper {
-    position: relative;
-
-    textarea {
-      border: 2px solid orange;
-      background-color: transparent;
-      resize: none;
-      border-radius: 5px;
-      width: 100%;
-      padding: 10px 35px 10px 10px;
-      outline: none;
-      font-size: 18px;
-      color: gray;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
-    .arrow-icon-wrapper {
-      position: absolute;
-      right: 15px;
-      bottom: 25px;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-
-      .arrow-icon {
-        width: 10px;
-      }
-    }
-  }
-}
-
-.show-more {
-  color: rgb(20, 20, 20);
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .selected-post {

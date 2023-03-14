@@ -36,7 +36,7 @@ const Albums = ({ onId }) => {
               <div className="album-item">
                 <h3>{album.title}</h3>
                 {photos && photos.length > 0 ? (
-                  <div className="photos-wrapper">
+                  <div className="album-photos-wrapper">
                     {photos.map((photo, index) => (
                       <img key={index} src={photo.thumbnailUrl} alt="random" />
                     ))}

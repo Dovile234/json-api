@@ -36,6 +36,12 @@
       margin-left: auto;
       width: 9px;
       height: 9px;
+      background-color: green;
+      border-radius: 50%;
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
     }
   }
 }

@@ -1,4 +1,3 @@
-import online from "../../../../Images/online.png";
 import React, { useState, useEffect } from "react";
 import "./Users-online.scss";
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ const UsersOnline = () => {
                   <p>{user.name}</p>
                   <span>{user.address.city}</span>
                 </div>
-                <img className="online" src={online} alt="online" />
+                <div className="online"></div>
               </div>
             </Link>
           ))}

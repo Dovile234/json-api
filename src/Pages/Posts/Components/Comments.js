@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReadMoreReact from "read-more-react/dist/components/ReadMoreReact";
 import arrow from "../../../Images/arrow.png";
 import { useParams } from "react-router-dom";
+import "./Comments.scss";
 
 const Comments = () => {
   let { post } = useParams();
